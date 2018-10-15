@@ -20,7 +20,7 @@ public class Gameplay extends JPanel implements KeyListener,ActionListener {
        private MapGenerator map;
        
        public Gameplay() {
-    	   map=new MapGenerator(5,7);
+    	   map=new MapGenerator(3,7);
     	   addKeyListener(this);
     	   setFocusable(true);
     	   setFocusTraversalKeysEnabled(false);
@@ -62,11 +62,7 @@ public class Gameplay extends JPanel implements KeyListener,ActionListener {
     		     }
        }
        
-       public void moveRight() {
-    	   play=true;
-    	   playerX+=20;
-    	   
-       }
+       public void moveRight() {  play=true;playerX+=20; }
        public void moveLeft() {
     	   play=true;
     	   playerX-=20;
@@ -93,7 +89,7 @@ public class Gameplay extends JPanel implements KeyListener,ActionListener {
 						map.setBrickvalue(0,i,j);
 						totalBricks--;
 						score+=5;
-						if(ballposX+19<=brickRect.x|| ballposX+1>=brickRect.x) {
+						if(ballposX+19<=brickRect.x|| ballposX+1>=brickRect.x+brickRect.width) {
 							ballXdir=-ballXdir;
 						}else {
 							ballYdir=-ballYdir;
