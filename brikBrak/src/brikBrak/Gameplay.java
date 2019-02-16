@@ -11,7 +11,7 @@ public class Gameplay extends JPanel implements KeyListener,ActionListener {
        private int score=0;
        private int totalBricks=21;
        private Timer time;
-       private int delay=8;
+       private int delay=9;
        private int playerX=310;
        private int ballposX=120;
        private int ballpoY=350;
@@ -37,7 +37,7 @@ public class Gameplay extends JPanel implements KeyListener,ActionListener {
     	   g.fillRect(0, 0, 3692, 3);
     	   g.fillRect(691, 0, 3, 592);
     	   
-    	   
+    	 System.out.println("sdfqsqdfqsdfqs");  
     	   g.setColor(Color.green);
     	   g.fillRect(playerX, 550, 100, 8);
     	   
@@ -73,8 +73,8 @@ public class Gameplay extends JPanel implements KeyListener,ActionListener {
 		time.start();
 		if(play) {
 			if(new Rectangle(ballposX,ballpoY,20,20).intersects(new Rectangle(playerX,550,100,8))) {
-			ballYdir=-ballYdir;	
-			}
+			ballYdir=-ballYdir;		}
+			
 			A:for(int i=0;i<map.map.length;i++) {
 				for(int j=0;j<map.map[0].length;j++) {
 					if(map.map[i][j]>0) {
